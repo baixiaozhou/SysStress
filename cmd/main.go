@@ -14,6 +14,7 @@ func Main(args []string) error {
 		HideHelpCommand: true,
 		Commands: []*cli.Command{
 			stressCpu(),
+			stressMem(),
 		},
 	}
 	return app.Run(args)

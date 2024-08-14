@@ -42,9 +42,8 @@ sysstress cpu --cpu-number 10 --duration 10m
 func cpu(c *cli.Context) error {
 	cpuNum := c.Int("cpu-number")
 	if cpuNum <= 0 || cpuNum > runtime.NumCPU() {
-		return fmt.Errorf("cpu number must be between 0 and %d, %d", runtime.NumCPU(), cpuNum)
+		return fmt.Errorf("cpu number must be between 0 and %d", runtime.NumCPU())
 	}
-	fmt.Println("duration:", c.Duration("duration"))
 	duration, err := time.ParseDuration(c.String("duration"))
 	if err != nil {
 		return err
