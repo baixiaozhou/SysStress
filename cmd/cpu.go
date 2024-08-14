@@ -19,7 +19,7 @@ CPUStress is a robust tool designed to simulate heavy workloads on specific CPU 
 
 Examples:
 # To run stress test with 10 threads for 10 minutes
-sysstrain cpu --cpu-number 10 --duration 10m
+sysstress cpu --cpu-number 10 --duration 10m
 `,
 		Flags: []cli.Flag{
 			&cli.IntFlag{

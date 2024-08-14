@@ -1,7 +1,7 @@
 package main
 
 import (
-	"SysStrain/cmd"
+	"SysStress/cmd"
 	"fmt"
 	"os"
 )

@@ -1,4 +1,4 @@
-module SysStrain
+module SysStress
 
 go 1.22.3
 

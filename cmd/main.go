@@ -8,7 +8,7 @@ const (
 
 func Main(args []string) error {
 	app := &cli.App{
-		Name:            "sysstrain",
+		Name:            "sysstress",
 		Usage:           "A powerful tool designed to simulate high loads on your system",
 		Version:         version,
 		HideHelpCommand: true,
