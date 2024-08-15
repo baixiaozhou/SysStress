@@ -22,9 +22,11 @@ This command will stress the CPU for 10 minutes on 10 cores. Valid time units ar
 ### Memory Stress Test
 
 ```
-./sysstress memory --size 1G --duration 10m
+./sysstress memory --size 1G --duration 10m [--force true|false]
 ```
 This command will use 1 GB of available memory for a duration of 10 minutes. Valid memory units are "G","M","K", such as "1G", "125M", "32K" 
+
+When the requested memory exceeds the total system memory, the operation will be denied. If the requested memory exceeds the available memory, a warning will be issued that this operation is not allowed unless the `--force true` parameter is added. This consideration is based on the fact that available memory is a dynamic value, and exceeding it during allocation could result in an OOM (Out of Memory) error.
 
 ### Run in the background
 
