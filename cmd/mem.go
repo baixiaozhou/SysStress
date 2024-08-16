@@ -17,7 +17,10 @@ func stressMem() *cli.Command {
 	return &cli.Command{
 		Name:  "memory",
 		Usage: "memory stress",
-		Description: `This command stress memory stress.
+		Description: `Memory stress testing tool primarily used to consume system memory. It provides three parameters:
+1.	size: The amount of memory to allocate. If the requested size exceeds the total system memory, the operation is denied. If it exceeds the available memory, the operation is also denied. However, if the --force parameter is set to true, the restriction can be lifted.
+2.	duration: The duration for which the memory allocation should run.
+3.	force: An optional parameter that references the size parameter, allowing the request to exceed system memory limits as described in point 1.”
 `,
 		Flags: []cli.Flag{
 			&cli.StringFlag{

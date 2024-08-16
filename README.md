@@ -1,6 +1,6 @@
 # SysStress Usage Guide
 
-SysStress is a powerful tool designed to simulate high loads on your system’s CPU, memory, and other resources, allowing you to test and observe system performance under stress. Below is an overview of how to use SysStrain effectively.
+SysStress is a powerful tool designed to simulate high loads on your system’s CPU, memory, and other resources, allowing you to test and observe system performance under stress. Below is an overview of how to use SysStress effectively.
 
 ## 1. Installation
 To install SysStress, you can download the binary from the official repository or compile it from source. For example:
@@ -15,9 +15,11 @@ GOOS=linux GOARCH=amd64 go build -o sysstress
 ### CPU Stress Test
 
 ```
-./sysstress cpu --cpu-number 10 --duration 10m
+./sysstress cpu --cpu-number 10 --duration 10m [--force true|false]
 ```
 This command will stress the CPU for 10 minutes on 10 cores. Valid time units are "s", "m", "h", such as "300s", "1.5h" or "2h45m"
+
+When the requested number of cores exceeds the system’s CPU core count, the operation will be denied. However, you can bypass this restriction by using the `--force` option
 
 ### Memory Stress Test
 
@@ -34,8 +36,8 @@ If You want run these command in background,you can use:
 ```
 nohup ./sysstress xxx &
 ```
-also, if you don't want output, you can use:
+also, if you don't want any output, you can use:
 ```
-nohup ./sysstress xxx & 2>&1
+nohup ./sysstress xxx > /dev/null 2>&1 &
 
 ```
