@@ -15,6 +15,7 @@ func Main(args []string) error {
 		Commands: []*cli.Command{
 			stressCpu(),
 			stressMem(),
+			stressIO(),
 		},
 	}
 	return app.Run(args)
